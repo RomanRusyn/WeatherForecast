@@ -19,6 +19,7 @@ def index(request):
 
     all_cities = []
 
+
     for city in cities:
         res = requests.get(url.format(city.name)).json()
         city_info = {
@@ -28,6 +29,7 @@ def index(request):
         }
 
         all_cities.append(city_info)
+
 
     context = {'all_info': all_cities, 'form': form}
 
